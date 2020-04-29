@@ -4,7 +4,7 @@ const router = express.Router();
 // route GET  api/contacts
 // desc  get all users contacts
 // access  private
-router.post("/", (req, res) => {
+router.get("/", (req, res) => {
   res.send("Get all contacts");
 });
 
@@ -18,14 +18,14 @@ router.post("/", (req, res) => {
 // route PUT  api/contacts/:id
 // desc  update contact
 // access  private
-router.post("/:id", (req, res) => {
+router.put("/:id", (req, res) => {
   res.send("Update contact");
 });
 
 // route DELETE  api/contacts
 // desc  Delete contact
 // access  private
-router.post("/:id", (req, res) => {
+router.delete("/:id", (req, res) => {
   res.send("Delete contact");
 });
 

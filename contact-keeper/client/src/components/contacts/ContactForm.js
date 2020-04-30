@@ -22,7 +22,7 @@ const ContactForm = () => {
     name: "",
     email: "",
     phone: "",
-    type: "Personal",
+    type: "personal",
   });
 
   const { name, email, phone, type } = contact;

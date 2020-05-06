@@ -45,10 +45,13 @@ const ContactState = (props) => {
     };
     try {
       const res = await axios.post("/api/contacts", contact, config);
-      console.log(res.data);
+      // console.log(res.data);
       dispatch({ type: ADD_CONTACT, payload: res.data });
+      console.log("adding");
     } catch (err) {
-      dispatch({ type: CONTACT_ERROR, payload: err.response.msg });
+      if (err.response) {
+        dispatch({ type: CONTACT_ERROR, payload: err.response.msg });
+      }
     }
   };
 

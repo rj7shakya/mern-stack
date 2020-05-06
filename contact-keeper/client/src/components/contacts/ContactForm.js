@@ -93,11 +93,13 @@ const ContactForm = () => {
           className="btn btn-primary btn-block"
         />
       </div>
-      <div>
-        <button className="btn btn-light btn-block" onClick={clearAll}>
-          Clear
-        </button>
-      </div>
+      {current && (
+        <div>
+          <button className="btn btn-light btn-block" onClick={clearAll}>
+            Clear
+          </button>
+        </div>
+      )}
     </form>
   );
 };

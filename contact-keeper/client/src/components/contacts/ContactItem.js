@@ -17,6 +17,7 @@ const ContactItem = ({ contact }) => {
       <h3 className="text-primary text-left">
         {name}{" "}
         <span
+          style={{ float: "right" }}
           className={
             "badge " +
             (type === "professional" ? "badge-success" : "badge-primary")

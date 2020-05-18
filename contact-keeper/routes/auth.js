@@ -7,7 +7,7 @@ const config = require("config");
 const auth = require("../middleware/auth");
 const { check, validationResult } = require("express-validator");
 
-// route POST  api/auth
+// route GET  api/auth
 // desc  get logged in user
 // access  private
 router.get("/", auth, async (req, res) => {

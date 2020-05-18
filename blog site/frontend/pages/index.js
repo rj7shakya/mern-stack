@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Layout from "../components/Layout";
 
-const index = () => {
+const Index = () => {
   return (
     <Layout>
       <h2>Index page </h2>
@@ -12,4 +12,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

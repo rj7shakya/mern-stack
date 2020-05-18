@@ -1,1 +1,1 @@
-<h1>Full stack mern app build in MERN stack</h1>
+<h1>Full stack mern apps build in MERN stack</h1>

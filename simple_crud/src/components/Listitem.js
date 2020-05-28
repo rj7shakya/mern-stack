@@ -1,9 +1,10 @@
 import React from 'react'
 
-const Listitem = () => {
+const Listitem = ({name}) => {
+  console.log(name);
   return (
     <div>
-      Item in list
+      {name}
     </div>
   )
 }

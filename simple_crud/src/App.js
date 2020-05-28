@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import HomeScreen from "./screens/HomeScreen";
+import {NavBar} from './components/Navbar';
+
 class App extends Component {
   render() {
     return (
       <div className="App">
-        Crud app
+        <NavBar/>
+        <HomeScreen/>
       </div>
     );
   }

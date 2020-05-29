@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ListGroupItem } from "reactstrap";
+import { ListGroupItem, Alert } from "reactstrap";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -9,6 +9,7 @@ import { Form } from "./Form";
 const List = ({ data, del, update, add }) => {
   const [newData, setnewData] = useState({});
   const [addPress, setaddPress] = useState(false);
+  const [alert, setalert] = useState(false);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -17,6 +18,11 @@ const List = ({ data, del, update, add }) => {
   };
 
   const onChange = (e) => {
+    if (e.target.value.length === 0) {
+      setalert(true);
+    } else {
+      setalert(false);
+    }
     setnewData({ name: e.target.value });
   };
 
@@ -25,7 +31,12 @@ const List = ({ data, del, update, add }) => {
       <div className="h2 py-3">List of data</div>
       <ListGroupItem>
         {addPress ? (
-          <Form value="add" onChange={onChange} onSubmit={onSubmit} />
+          <Form
+            value="add"
+            onChange={onChange}
+            onSubmit={onSubmit}
+            className="mb-2"
+          />
         ) : (
           <div>
             <FontAwesomeIcon
@@ -39,6 +50,7 @@ const List = ({ data, del, update, add }) => {
           </div>
         )}
       </ListGroupItem>
+      {alert && <Alert color="danger">Please fill box</Alert>}
       {data &&
         data.map((item) => (
           <React.Fragment key={item._id}>

@@ -7,10 +7,24 @@ export default class HomeScreen extends Component {
   state={
     datas:[],
   };
+ 
   render() {
+    const onDelete = async (id)=>{
+      console.log(`deleting at ${id}`)
+      // const data = axios
+    }
+
+    const onEdit = (id)=>{
+      console.log(`editing at ${id}`)
+    }
+
+    const onAdd = (data)=>{
+      console.log(`adding data ${data}`)
+    }
+
     return (
       <div className="container">
-        <List data={this.state.datas} />
+        <List data={this.state.datas} del={onDelete} edit={onEdit} add={onAdd} />
       </div>
     )
   }

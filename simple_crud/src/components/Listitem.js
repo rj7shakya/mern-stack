@@ -1,11 +1,10 @@
-import React from 'react'
+import React from 'react';
+import { ListGroup, ListGroupItem } from 'reactstrap';
 
 const Listitem = ({name}) => {
-  console.log(name);
   return (
-    <div>
-      {name}
-    </div>
+    
+      <Listitem>{name}</Listitem>
   )
 }
 

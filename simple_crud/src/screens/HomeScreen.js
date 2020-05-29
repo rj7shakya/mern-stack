@@ -15,7 +15,7 @@ export default class HomeScreen extends Component {
     )
   }
 
-  async componentWillMount(){
+  async componentDidMount(){
     try {
       const res = await axios.get('/data');
       this.setState({datas:[...res.data]});

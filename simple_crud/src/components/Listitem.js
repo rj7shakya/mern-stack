@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { ListGroupItem, Alert } from "reactstrap";
+import React from "react";
+import { ListGroupItem } from "reactstrap";
 import { faPen, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

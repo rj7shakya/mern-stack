@@ -41,6 +41,10 @@ class App extends Component {
             const updatedItem = {
               ...item,
               name: newData.data.name,
+              email: newData.data.email,
+              address: newData.data.address,
+              dob: newData.data.dob,
+              contact: newData.data.contact,
             };
             return updatedItem;
           }
@@ -63,8 +67,6 @@ class App extends Component {
         console.log(e);
       });
   }
-
-  
 
   render() {
     return (

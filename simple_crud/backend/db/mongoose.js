@@ -6,6 +6,8 @@ mongoose.connect(process.env.MONGO_URI,{
     useUnifiedTopology:true,
     useNewUrlParser: true,
     useUnifiedTopology:true,
+    useFindAndModify:false,
+    
 },(error,client)=>{
     if(error){
         return console.log('unable to connect to db');

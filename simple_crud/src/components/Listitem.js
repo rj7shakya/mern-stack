@@ -12,14 +12,16 @@ const Listitem = ({ name, id, onDelete, onUpdate }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    onUpdate(id, newData);
-    seteditPress(!editPress);
+    if(!alert){
+      onUpdate(id, newData);
+      seteditPress(!editPress);
+    }
   };
 
   const onChange = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     if (e.target.value.length === 0) {
-      console.log("empty");
+      // console.log("empty");
       setalert(true);
     } else {
       setalert(false);

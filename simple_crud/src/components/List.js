@@ -13,8 +13,10 @@ const List = ({ data, del, update, add }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    add(newData);
-    setaddPress(!addPress);
+    if (!alert) {
+      add(newData);
+      setaddPress(!addPress);
+    }
   };
 
   const onChange = (e) => {

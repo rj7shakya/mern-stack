@@ -3,36 +3,18 @@ import { ListGroupItem, Alert } from "reactstrap";
 import { faPen, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { Form } from "./Form";
+import { Link } from "react-router-dom";
 
-const Listitem = ({ name, id, onDelete, onUpdate }) => {
-  const [editPress, seteditPress] = useState(false);
-  const [newData, setNewData] = useState({});
-  const [alert, setalert] = useState(false);
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    if(!alert){
-      onUpdate(id, newData);
-      seteditPress(!editPress);
-    }
+const Listitem = ({ item, id, onDelete, onUpdate }) => {
+  const newTo = { 
+    pathname: `/edit/${id}`, 
+    param1: "Par1" 
   };
-
-  const onChange = (e) => {
-    // console.log(e.target.value);
-    if (e.target.value.length === 0) {
-      // console.log("empty");
-      setalert(true);
-    } else {
-      setalert(false);
-    }
-    setNewData({ name: e.target.value });
-  };
-
+  
   return (
     <div>
       <ListGroupItem>
-        {name}
+        <span className="font-weight-bold">{item.name}</span>
         <FontAwesomeIcon
           icon={faTrashAlt}
           onClick={() => {
@@ -40,26 +22,18 @@ const Listitem = ({ name, id, onDelete, onUpdate }) => {
           }}
           className="float-right"
         />
-        <FontAwesomeIcon
-          icon={faPen}
-          onClick={() => {
-            seteditPress(!editPress);
-            // onUpdate(id);
-          }}
-          className="float-right mr-3"
-        />
-      </ListGroupItem>
-      {editPress && (
-        <ListGroupItem>
-          <Form
-            value="edit"
-            def={name}
-            onChange={onChange}
-            onSubmit={onSubmit}
+        <Link to={newTo}>
+          <FontAwesomeIcon
+            icon={faPen}
+            style={{ color: "black" }}
+            className="float-right mr-3"
           />
-        </ListGroupItem>
-      )}
-      {alert && <Alert color="danger">Please fill box</Alert>}
+        </Link>
+        <div>{item.email}</div>
+        <div>{item.dob.substring(0,10)}</div>
+        <div>{item.address}</div>
+        <div>{item.contact}</div>
+      </ListGroupItem>
     </div>
   );
 };

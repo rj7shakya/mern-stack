@@ -56,4 +56,17 @@ router.delete('/data/:id',async (req,res)=>{
   }
 })
 
+//get a data
+router.get('/data/:id',async (req,res)=>{
+  try {
+    const data = await Data.findById({_id: req.params.id});
+    if(!data){
+      return res.status(404).send('No data found');
+    }
+    return res.json(data);
+  } catch (error) {
+    res.status(404).send(error);
+  }
+})
+
 module.exports = router;
